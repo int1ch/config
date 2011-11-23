@@ -1,0 +1,43 @@
+
+
+#from DENPLUSPLUS
+shopt -s histappend
+export HISTFILESIZE=200000
+#export HISTIGNORE="&:ls:bg:fg:ps x:exit"
+
+export CLICOLOR=1
+export EDITOR=vim
+export LD_LIBRARY_PATH=/usr/local/perl-5.10.1-search/lib:${LD_LIBRARY_PATH}
+export PATH=~/bin/bin:$PATH:/sbin:/usr/sbin:$HOME/bin
+
+export DEBFULLNAME="Mike Nikitin"
+export DEBEMAIL=mellior@yandex-team.ru
+alias dch="dch --distributor debian --distribution unstable"
+alias mdch='DEBFULLNAME="buildfarm" DEBEMAIL="buildfarm@yandex-team.ru" dch --distributor debian --distribution unstable'
+git config --global user.name "MIke NIkitin"
+git config --global user.email mellior@yandex-team.ru
+OS=`uname -s`
+HOSTNAME=`hostname`
+
+
+if test ${OS} = "FreeBSD"
+then
+    alias amake="make"
+else
+    alias amake="pmake"
+fi
+
+alias ls="ls -l --color"
+alias grepc='find . \( -name \*.cpp -o -name \*.h -o -name \*.cc -o -name \*.hh -o -name \*.c -o -name \*.dbc -o -name \*.l -o -name \*.y -o -name \*.rl \) | grep -v .svn |  xargs grep -n'
+alias greph='find . \( -name \*.h -o -name \*.hh  \) | grep -v .svn |  xargs grep -n'
+alias grepm='find . \( -name CMakeLists.\*  \) | grep -v .svn | xargs grep -n'
+alias greps='find . | grep -v .svn | xargs egrep -n'
+alias lmake='NOPEER=1 amake'
+alias vim='vim -p'
+
+alias cMake.py='/opt/www/arcadia/cmake/scripts/cMake.py'
+
+
+
+
+

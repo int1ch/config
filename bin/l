@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+my $dev = '';
+if ($ARGV[0]=~/^\d+$/){
+   $dev = '-dev'.$ARGV[0];
+   shift @ARGV;
+} elsif( $ARGV[0] =~/^\w+$/ ){
+   $dev = '-'.$ARGV[0];
+   shift @ARGV;
+}
+
+system "tail ". join(' ', @ARGV)." /opt/www/log/morda".$dev.".error_log";
+#print "Dev: $dev\n";

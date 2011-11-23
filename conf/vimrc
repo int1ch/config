@@ -1,0 +1,94 @@
+set nocompatible
+
+syntax on
+
+set nowrap
+set bg=dark
+set mouse+=a
+
+set ic
+set incsearch		" do incremental searching
+set hlsearch
+
+map <F2> :w<CR>
+map <F3> :mksession! ~/mk_vim_session <CR> " Quick write session with F2
+map <F4> :source ~/mk_vim_session <CR>     " And load session with F3
+map <F5> :tabNext <CR>
+map <F6> :tabnext <CR>
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+set backup		" keep a backup file
+
+set history=50		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+set showcmd		" display incomplete commands
+
+set number
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+set t_Co=256
+colorscheme xoria256
+
+set encoding=utf-8
+set termencoding=utf-8
+set fileencodings=utf-8,cp1251,cp866,koi8-r
+
+set statusline=%<%f%h%m%r%=format=%{&fileformat}\ file=%{&fileencoding}\ enc=%{&encoding}\ %b\ 0x%B\ %l,%c%V\ %P
+set laststatus=2
+
+map <Tab> >>
+map <S-Tab> <<
+vmap <Tab> >gv
+vmap <S-Tab> <gv
+
+" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+" let &guioptions = substitute(&guioptions, "t", "", "g")
+
+" Don't use Ex mode, use Q for formatting
+map Q gq
+
+" This is an alternative that also works in block mode, but the deleted
+" text is lost and it only works for putting the current register.
+"vnoremap p "_dp
+
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+endif
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.
+  " Don't do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent		" always set autoindenting on
+
+endif " has("autocmd")

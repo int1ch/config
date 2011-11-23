@@ -1,0 +1,11 @@
+#!/usr/bin/perl
+
+my $path = '.';
+if( scalar @ARGV > 1 ){
+    my (@args) = (@ARGV);
+    shift @args;
+    $path =join (' ', @args); 
+}
+my $call = "egrep -r '".$ARGV[0]."' ".$path." | grep -v '.svn' | grep -v '~:' | awk 'length( \$0 ) < 300' ";
+print $call ."\n";
+system $call;

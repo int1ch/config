@@ -1,0 +1,22 @@
+#!/usr/bin/perl -w
+# coding: utf-8
+use strict;
+
+opendir (DIR, ".");
+my @DIR = grep {/\.vim$/} readdir(DIR);
+
+foreach my $el (@DIR){
+    open IN, "<$el";
+	open OUT, ">$el.temp";
+	while (<IN>){
+	  s,\r,,g;
+	  print OUT $_;
+    }
+	close IN;
+	close OUT;
+	rename("$el.temp", $el);
+
+}
+
+closedir(DIR);
+

@@ -1,0 +1,15 @@
+#!/usr/local/bin/bash
+
+run=/opt/www/morda-dev$1/fastcgi.sh
+run2=/opt/www/morda-$1/fastcgi.sh
+
+if [ -f $run ];then
+    sudo $run dev$1 restart
+else
+    if [ -f $run2 ];then
+        sudo $run2 $1 restart
+    else
+        echo 'Bad Dev Number'
+    fi
+fi
+
