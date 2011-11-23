@@ -1,0 +1,6 @@
+rm -r $HOME/bin
+rm -r $HOME/.vim
+rm $HOME/.bash_profile
+rm $HOME/.vimrc
+rm $HOME/.gitconfig
+rm $HOME/.git_autocomplite

@@ -1,0 +1,16 @@
+#!/bin/sh
+
+TOOLS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo "HOMe: $HOME"
+echo "SCRIPT: $0"
+echo "TOOLS:$TOOLS_DIR"
+
+
+ln -s $TOOLS_DIR/bin $HOME/bin
+ln -s $TOOLS_DIR/vim $HOME/.vim
+ln -s $TOOLS_DIR/conf/bash_profile $HOME/.bash_profile
+ln -s $TOOLS_DIR/conf/vimrc $HOME/.vimrc
+ln -s $TOOLS_DIR/conf/gitconfig $HOME/.gitconfig
+ln -s $TOOLD_DIR/conf/git_autocomplite $HOME/.git_autocomplite
+
+
