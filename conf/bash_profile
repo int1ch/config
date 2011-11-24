@@ -36,7 +36,7 @@ alias vim='vim -p'
 
 alias cMake.py='/opt/www/arcadia/cmake/scripts/cMake.py'
 
-$HOME/.git_autocomplite
+bash $HOME/.git_autocomplite
 
 
 

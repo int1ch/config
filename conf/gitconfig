@@ -6,6 +6,7 @@
 	status = auto
 	branch = auto
 [alias]
+    b = branch
 	co = checkout
 	ci = commit
 	up = remote update
