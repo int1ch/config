@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/opt/www/morda-dev48/tmpl/catalog/blocks/b-widget-tags'
-let g:netrw_dirhist_2='/opt/www/morda-dev49/tests'
-let g:netrw_dirhist_3='/opt/www/morda-dev48/configurator/templates'
-let g:netrw_dirhist_4='/opt/www/morda-dev49/wadm/scripts'
-let g:netrw_dirhist_5='/opt/www/morda-dev49/tmpl/catalog/blocks/l-widget-grid'
-let g:netrw_dirhist_6='/opt/www/morda-dev60/scripts'
