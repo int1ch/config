@@ -11,3 +11,5 @@
 	ci = commit
 	up = remote update
 	st = status
+[core]
+	excludesfile = ~/tools/conf/gitignore

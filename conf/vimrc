@@ -13,8 +13,9 @@ set hlsearch
 map <F2> :w<CR>
 map <F3> :mksession! ~/mk_vim_session <CR> " Quick write session with F2
 map <F4> :source ~/mk_vim_session <CR>     " And load session with F3
-map <F5> :tabNext <CR>
-map <F6> :tabnext <CR>
+map tr :tabprev<CR>
+map ty :tabnext<CR>
+
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
