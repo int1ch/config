@@ -9,5 +9,5 @@ if ($ARGV[0]=~/^\d+$/){
    shift @ARGV;
 }
 
-system "tail ". join(' ', @ARGV)." /opt/www/log/morda".$dev.".error_log";
+system "tail ". join(' ', @ARGV)." /var/log/www/morda".$dev.".error_log";
 #print "Dev: $dev\n";
