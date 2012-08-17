@@ -10,6 +10,7 @@ ln -s $TOOLS_DIR/bin $HOME/bin
 ln -s $TOOLS_DIR/vim $HOME/.vim
 ln -s $TOOLS_DIR/conf/bash_profile $HOME/.bash_profile
 ln -s $TOOLS_DIR/conf/vimrc $HOME/.vimrc
+ln -s $TOOLS_DIR/conf/ackrc $HOME/.ackrc
 ln -s $TOOLS_DIR/conf/gitconfig $HOME/.gitconfig
 ln -s $TOOLS_DIR/conf/git_autocomplite $HOME/.git_autocomplite
 ln -s $TOOLS_DIR/conf/dupload.conf $HOME/.dupload.conf
